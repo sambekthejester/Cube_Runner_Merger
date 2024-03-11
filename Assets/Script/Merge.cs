@@ -11,8 +11,10 @@ namespace hit
 
         public void HitCubeMethod(Transform player, List<Transform> playerCubes,Transform hitObject)
         {
-            
-            player.position =new Vector3(player.position.x,player.position.y+1,player.position.z);
+
+           
+
+            player.position = new Vector3(player.position.x, player.position.y + 1, player.position.z);
             player.GetChild(0).position = new Vector3(player.GetChild(0).position.x, player.GetChild(0).position.y - 1, player.GetChild(0).position.z);
         
             if (playerCubes.Count > 0)

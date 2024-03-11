@@ -40,7 +40,7 @@ namespace hit
             }
             else
             {
-                
+                GameManager.Instance.IsGameOver = true;
                 GameManager.Instance.GameOver();
             }
            

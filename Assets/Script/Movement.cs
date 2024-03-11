@@ -37,13 +37,13 @@ public class Movement : MonoBehaviour
     }
     private void moveForward()
     {
-        transform.Translate(Vector3.forward * _verticalSpeed * Time.fixedDeltaTime);
+        transform.Translate(Vector3.forward * _verticalSpeed * Time.deltaTime);
         if (MergeController.Instance.PlayerCubes.Count>0)
         {
             for (int i = 0; i < MergeController.Instance.PlayerCubes.Count; i++)
             {
                 MergeController.Instance.PlayerCubes[i].transform.
-                    Translate(Vector3.forward * _verticalSpeed * Time.fixedDeltaTime);
+                    Translate(Vector3.forward * _verticalSpeed * Time.deltaTime);
             }
 
         }
@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour
 
     private void moveHorizontal()
     {
-        _newPos = transform.position.x + _horizontal * Time.fixedDeltaTime * _horizontalSpeed;
+        _newPos = transform.position.x + _horizontal * Time.deltaTime * _horizontalSpeed;
 
 
         if (_newPos < 4.5f && _newPos > -4.5f)
@@ -62,9 +62,12 @@ public class Movement : MonoBehaviour
             {
                 for (int i = 0; i < MergeController.Instance.PlayerCubes.Count; i++)
                 {
-                    _newPos1 = MergeController.Instance.PlayerCubes[i].transform.position.x + _horizontal * Time.fixedDeltaTime * _horizontalSpeed;
+                    _newPos1 = MergeController.Instance.PlayerCubes[i].transform.position.x
+                        + _horizontal * Time.deltaTime * _horizontalSpeed;
+                   
                     MergeController.Instance.PlayerCubes[i].transform.position = new Vector3
-                        (_newPos1, MergeController.Instance.PlayerCubes[i].transform.position.y, MergeController.Instance.PlayerCubes[i].transform.position.z);
+                        (_newPos1, MergeController.Instance.PlayerCubes[i].transform.position.y,
+                        MergeController.Instance.PlayerCubes[i].transform.position.z);
                 }
 
             }

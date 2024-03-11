@@ -21,7 +21,7 @@ public class MapGenerate : MonoSingleton<MapGenerate>
         {
             int RandNum = Random.Range(num1, num2);
 
-            Debug.Log(RandNum + "GenerateCubePos ");
+           // Debug.Log(RandNum + "GenerateCubePos ");
             while (GeneCubesList.Count != RandNum)
             {
 
@@ -84,7 +84,7 @@ public class MapGenerate : MonoSingleton<MapGenerate>
         for (int i = 0; i < GeneCubesList.Count; i++)
         {
             int a = Random.Range(0, 3);
-            Debug.Log(a);
+            
             if (a>=1)
             {
                 Instantiate(GeneCube, GeneCubesList[i], Quaternion.identity);

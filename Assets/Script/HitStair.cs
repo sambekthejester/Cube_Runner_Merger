@@ -12,7 +12,8 @@ namespace hit
 
                 if (playerCubes.Count < 1)
                 {
-                    GameManager.Instance.GameOverStair();
+                GameManager.Instance.IsGameOver = true;
+                GameManager.Instance.GameOverStair();
                 }
                 else
                 {
@@ -26,7 +27,8 @@ namespace hit
                 {
                     if (GameManager.Instance.StairScore == 10)
                     {
-                        GameManager.Instance.GameOverStair();
+                    GameManager.Instance.IsGameOver = true;
+                    GameManager.Instance.GameOverStair();
                     }
                 }
             

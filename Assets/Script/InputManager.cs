@@ -13,7 +13,8 @@ public class InputManager : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
 
-            if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved && Mathf.Abs(touch.deltaPosition.x) < 80)
+            if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved 
+                && Mathf.Abs(touch.deltaPosition.x) < 80)
             {
 
                 _horizontal = touch.deltaPosition.x;
